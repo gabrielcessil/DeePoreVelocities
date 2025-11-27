@@ -88,6 +88,7 @@ Domain { Filename = "domain.raw" ReadType = "8bit" // data type nproc = 1, 1, 4 
 Visualization { format = "vtk" write_silo = true // SILO databases with assigned variables save_8bit_raw = true // labeled 8-bit binary files with phase assignments save_phase_field = true // phase field within SILO database save_pressure = true // pressure field within SILO database save_velocity = true // velocity field within SILO database }
 
 Analysis { analysis_interval = 5000 // logging interval for timelog.csv subphase_analysis_interval = 100000000 // logging interval for subphase.csv N_threads = 0 // number of analysis threads (GPU version only) visualization_interval = 100000000 // interval to write visualization files restart_interval = 100000000 // interval to write restart file restart_file = "Restart" // base name of restart file }
+
 </kbd>
 
 ---
