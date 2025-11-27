@@ -146,7 +146,7 @@ Another relationship expected from the definition of the Reynolds number based o
 
 To reduce the storage cost of the simulation set, it was decided to record information only for the porous spaces, limited to **half of the volumetric domain**, where the relevant values exist.
 
-For each voxel, the following was used: **three \texttt{float16} for velocity values**, **three \texttt{uint8} for coordinates and distance transform**, and **one \texttt{uint32} to represent the number of porous voxels** per sample. Since \texttt{uint8}, \texttt{uint32}, and \texttt{float16} use $1$, $4$, and $2$ bytes, respectively, the total consumption becomes:
+For each voxel, the following was used: **three float16 for velocity values**, **three uint8 for coordinates and distance transform**, and **one uint32 to represent the number of porous voxels** per sample. Since uint8, uint32, and float16 use $1$, $4$, and $2$ bytes, respectively, the total consumption becomes:
 
 $$
 (4 \times 2 + 3 \times 1)\times \frac{256^3}{2} + 1 \times 4 \approx 5.5\,\times 256^3 \text{ bytes / sample}
@@ -162,6 +162,6 @@ This is about **$45\%$ more memory**. Therefore, the first strategy is more effi
 
 The limitation to $50\%$ of the sample volume was determined based on the samples used, with the largest porosity observed in the DeePore image database being $7,560,816$ porous voxels, or $45.066\%$ of the total volume of $256^3$ voxels.
 
-* The choice of **\texttt{uint8} for coordinates** is justified as it represents values between $0$ and $255$, equal to the coordinates of a $256^3$ array.
-* The **\texttt{uint32} type** was chosen to represent values between $0$ and $4,294,967,295$, the smallest unsigned integer type greater than the maximum number of porous voxels ($8,388,608$).
-* **\texttt{float16} data** was used for the distance transform and velocities, representing values between $-65504$ and $65504$, with the smallest non-zero modulus being $5.96046 \times 10^{-8}$.
+* The choice of **uint8 for coordinates** is justified as it represents values between $0$ and $255$, equal to the coordinates of a $256^3$ array.
+* The **uint32 type** was chosen to represent values between $0$ and $4,294,967,295$, the smallest unsigned integer type greater than the maximum number of porous voxels ($8,388,608$).
+* **float16 data** was used for the distance transform and velocities, representing values between $-65504$ and $65504$, with the smallest non-zero modulus being $5.96046 \times 10^{-8}$.
