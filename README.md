@@ -79,7 +79,7 @@ Under these conditions, **17,700 LBM simulations** were performed using the code
 
 Below is an example of the LBPM input (Figure 1), referring to sample 525 of the database, with a maximum distance transform value of $36.77$, which requires applying a force of $1.788 \times 10^{-6}$ in lattice units, according to Equation (3).
 
-
+<kbd>
 
 MRT { tau = 1.5 din = 0.0 // inlet density (controls pressure) dout = 0.0 // outlet density (controls pressure) F = 0, 0, 1.78806e-06 // Fx, Fy, Fz timestepMax = 100000000 tolerance = 1e-06 }
 
@@ -88,7 +88,7 @@ Domain { Filename = "domain.raw" ReadType = "8bit" // data type nproc = 1, 1, 4 
 Visualization { format = "vtk" write_silo = true // SILO databases with assigned variables save_8bit_raw = true // labeled 8-bit binary files with phase assignments save_phase_field = true // phase field within SILO database save_pressure = true // pressure field within SILO database save_velocity = true // velocity field within SILO database }
 
 Analysis { analysis_interval = 5000 // logging interval for timelog.csv subphase_analysis_interval = 100000000 // logging interval for subphase.csv N_threads = 0 // number of analysis threads (GPU version only) visualization_interval = 100000000 // interval to write visualization files restart_interval = 100000000 // interval to write restart file restart_file = "Restart" // base name of restart file }
-
+</kbd>
 
 ---
 
