@@ -80,46 +80,46 @@ Under these conditions, **17,700 LBM simulations** were performed using the code
 Below is an example of the LBPM input (Figure 1), referring to sample 525 of the database, with a maximum distance transform value of $36.77$, which requires applying a force of $1.788 \times 10^{-6}$ in lattice units, according to Equation (3).
 
 <kbd>
-
-MRT { 
-tau = 1.5 
-din = 0.0 // inlet density (controls pressure) 
-dout = 0.0 // outlet density (controls pressure) 
-F = 0, 0, 1.78806e-06 // Fx, Fy, Fz 
-timestepMax = 100000000 tolerance = 1e-06
-}
-
-Domain { 
-Filename = "domain.raw" 
-ReadType = "8bit" // data type 
-nproc = 1, 1, 4 
-n = 256, 256, 64 
-N = 256, 256, 256 
-offset = 0, 0, 0 // offset to read sub-domain 
-voxel_length = 1 // voxel length (in microns) 
-ReadValues = 0, 1 // labels within the original image 
-WriteValues = 0, 1 // associated labels to be used by LBPM (0:solid, 1..N:fluids)
-BC = 5 // boundary condition type (0 for periodic) 
-InletLayers = 0, 0, 0 // specify layers along the inlet 
-OutletLayers = 0, 0, 0 // specify layers along the outlet 
-}
-
-Visualization { 
-format = "vtk" 
-write_silo = true // SILO databases with assigned variables s
-ave_8bit_raw = true // labeled 8-bit binary files with phase assignments 
-save_phase_field = true // phase field within SILO database s
-ave_pressure = true // pressure field within SILO database 
-save_velocity = true // velocity field within SILO database }
-
-Analysis {
-analysis_interval = 5000 // logging interval for timelog.csv 
-subphase_analysis_interval = 100000000 // logging interval for subphase.csv N
-_threads = 0 // number of analysis threads (GPU version only) 
-visualization_interval = 100000000 // interval to write visualization files 
-restart_interval = 100000000 // interval to write restart file 
-restart_file = "Restart" // base name of restart file }
-
+<br>
+MRT { <br>
+tau = 1.5 <br>
+din = 0.0 // inlet density (controls pressure) <br>
+dout = 0.0 // outlet density (controls pressure) <br>
+F = 0, 0, 1.78806e-06 // Fx, Fy, Fz <br>
+timestepMax = 100000000 tolerance = 1e-06<br>
+}<br>
+<br>
+Domain { <br>
+Filename = "domain.raw" <br>
+ReadType = "8bit" // data type <br>
+nproc = 1, 1, 4 <br>
+n = 256, 256, 64 <br>
+N = 256, 256, 256 <br>
+offset = 0, 0, 0 // offset to read sub-domain <br>
+voxel_length = 1 // voxel length (in microns) <br>
+ReadValues = 0, 1 // labels within the original image <br>
+WriteValues = 0, 1 // associated labels to be used by LBPM (0:solid, 1..N:fluids)<br>
+BC = 5 // boundary condition type (0 for periodic) <br>
+InletLayers = 0, 0, 0 // specify layers along the inlet <br>
+OutletLayers = 0, 0, 0 // specify layers along the outlet <br>
+}<br>
+<br>
+Visualization { <br>
+format = "vtk" <br>
+write_silo = true // SILO databases with assigned variables s<br>
+ave_8bit_raw = true // labeled 8-bit binary files with phase assignments <br>
+save_phase_field = true // phase field within SILO database s<br>
+ave_pressure = true // pressure field within SILO database <br>
+save_velocity = true // velocity field within SILO database }<br>
+<br>
+Analysis {<br>
+analysis_interval = 5000 // logging interval for timelog.csv <br>
+subphase_analysis_interval = 100000000 // logging interval for subphase.csv N <br>
+_threads = 0 // number of analysis threads (GPU version only) <br>
+visualization_interval = 100000000 // interval to write visualization files <br>
+restart_interval = 100000000 // interval to write restart file <br>
+restart_file = "Restart" // base name of restart file } <br>
+<br>
 </kbd>
 
 ---
