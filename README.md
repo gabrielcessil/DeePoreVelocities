@@ -1,4 +1,4 @@
-## Data Requirements for Porous Media Flow Simulations Dataset
+# Data Requirements for Porous Media Flow Simulations Dataset
 
 In light of the training process for neural networks, the following requirements were stipulated regarding the data for creating the dataset with simulations of flow in porous media.
 
@@ -81,13 +81,44 @@ Below is an example of the LBPM input (Figure 1), referring to sample 525 of the
 
 <kbd>
 
-MRT { tau = 1.5 din = 0.0 // inlet density (controls pressure) dout = 0.0 // outlet density (controls pressure) F = 0, 0, 1.78806e-06 // Fx, Fy, Fz timestepMax = 100000000 tolerance = 1e-06 }
+MRT { 
+tau = 1.5 
+din = 0.0 // inlet density (controls pressure) 
+dout = 0.0 // outlet density (controls pressure) 
+F = 0, 0, 1.78806e-06 // Fx, Fy, Fz 
+timestepMax = 100000000 tolerance = 1e-06
+}
 
-Domain { Filename = "domain.raw" ReadType = "8bit" // data type nproc = 1, 1, 4 n = 256, 256, 64 N = 256, 256, 256 offset = 0, 0, 0 // offset to read sub-domain voxel_length = 1 // voxel length (in microns) ReadValues = 0, 1 // labels within the original image WriteValues = 0, 1 // associated labels to be used by LBPM (0:solid, 1..N:fluids) BC = 5 // boundary condition type (0 for periodic) InletLayers = 0, 0, 0 // specify layers along the inlet OutletLayers = 0, 0, 0 // specify layers along the outlet }
+Domain { 
+Filename = "domain.raw" 
+ReadType = "8bit" // data type 
+nproc = 1, 1, 4 
+n = 256, 256, 64 
+N = 256, 256, 256 
+offset = 0, 0, 0 // offset to read sub-domain 
+voxel_length = 1 // voxel length (in microns) 
+ReadValues = 0, 1 // labels within the original image 
+WriteValues = 0, 1 // associated labels to be used by LBPM (0:solid, 1..N:fluids)
+BC = 5 // boundary condition type (0 for periodic) 
+InletLayers = 0, 0, 0 // specify layers along the inlet 
+OutletLayers = 0, 0, 0 // specify layers along the outlet 
+}
 
-Visualization { format = "vtk" write_silo = true // SILO databases with assigned variables save_8bit_raw = true // labeled 8-bit binary files with phase assignments save_phase_field = true // phase field within SILO database save_pressure = true // pressure field within SILO database save_velocity = true // velocity field within SILO database }
+Visualization { 
+format = "vtk" 
+write_silo = true // SILO databases with assigned variables s
+ave_8bit_raw = true // labeled 8-bit binary files with phase assignments 
+save_phase_field = true // phase field within SILO database s
+ave_pressure = true // pressure field within SILO database 
+save_velocity = true // velocity field within SILO database }
 
-Analysis { analysis_interval = 5000 // logging interval for timelog.csv subphase_analysis_interval = 100000000 // logging interval for subphase.csv N_threads = 0 // number of analysis threads (GPU version only) visualization_interval = 100000000 // interval to write visualization files restart_interval = 100000000 // interval to write restart file restart_file = "Restart" // base name of restart file }
+Analysis {
+analysis_interval = 5000 // logging interval for timelog.csv 
+subphase_analysis_interval = 100000000 // logging interval for subphase.csv N
+_threads = 0 // number of analysis threads (GPU version only) 
+visualization_interval = 100000000 // interval to write visualization files 
+restart_interval = 100000000 // interval to write restart file 
+restart_file = "Restart" // base name of restart file }
 
 </kbd>
 
