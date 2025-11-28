@@ -84,7 +84,7 @@ The procedure used to determine the flow conditions for a given 3D rock image in
 
 Under these conditions, **17,700 LBM simulations** were performed using the code available from \cite{mcclure2021lbpm}.
 
-Below is an example of the LBPM input (Figure 1), referring to sample 525 of the database, with a maximum distance transform value of $36.77$, which requires applying a force of $1.788 \times 10^{-6}$ in lattice units, according to Equation (3).
+Below is an example of the LBPM input, referring to sample 525 of the database, with a maximum distance transform value of $36.77$, which requires applying a force of $1.788 \times 10^{-6}$ in lattice units, according to Equation (3).
 
 <kbd>
 <br>
