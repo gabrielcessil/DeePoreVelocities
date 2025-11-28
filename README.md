@@ -59,7 +59,9 @@ Thus, it is evident that the force that conditions the flow is dependent **only 
 
 The use of $r_{max}$ is justified because it generates an **overestimation** of the Reynolds number, i.e., an upper limit. This ensures that the simulations are in the $Re \ll 1$ regime and, consequently, in the **Darcy regime**. Another perspective on the choice of $r_{max}$ is its relationship with the correlation length observed in statistical experiments. The maximum distance transform value $r_{max}$ serves as an estimate for the **correlation length**, the distance at which the variogram curve reaches a plateau (sill).
 
-<img src="Images/Variogram.png" width="820">
+<div style="text-align: center;">
+    <img src="Images/Variogram.png" width="820">
+</div>
 
 ---
 
