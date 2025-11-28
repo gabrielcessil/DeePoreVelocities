@@ -15,7 +15,7 @@ These requirements aim to represent computational and fluid mechanics aspects ap
 
 ## Methodology for Database Creation
 
-The established database used the domains presented by \cite{rabbani2020deepore}, which is composed of **60 rocks with different formations**. Furthermore, due to the texture interpolation and porosity control method, the domains used are representative of flows with different properties pertinent to oil extraction.
+The established database used the domains presented by [DeePore dataset](https://github.com/ArashRabbani/DeePore), which is composed of **17700 tridimentional images** augmented from **60 real rocks**. Furthermore, due to the texture interpolation and porosity control method, the domains used are representative of flows with different properties pertinent to oil extraction. The simulations made in our work were performed using [Lattice Boltzmann Methods for Porous Media](https://github.com/OPM/LBPM), which you can find my installation guide [here](https://github.com/gabrielcessil/LBPM_Installer).
 
 ### Determining Flow Conditions
 
