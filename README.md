@@ -40,7 +40,7 @@ where $\rho$ is the density, $\mu$ is the viscosity, $r$ is the equivalent pipe 
 For creating the database in the same flow regime, the **pipe radius ($r$)** was defined as equal to the **maximum value of the distance transform in the rock ($r_{max}$)**. The Reynolds number was determined based on what is observed in typical porous media experiments, which is **$Re \ll 1$**. To stipulate the force, a maximum Reynolds number $\left(Re_{max}\right)$ of **$0.1$** was used.
 
 <p align="center">
-  <img src="Images/rockTUbe.png" width="50%">
+  <img src="Images/rockTUbe.png" width="48%">
   <img src="Images/max_dt_slice.svg" width="45%">
 </p>
 
