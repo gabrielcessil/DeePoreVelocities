@@ -39,6 +39,11 @@ where $\rho$ is the density, $\mu$ is the viscosity, $r$ is the equivalent pipe 
 
 For creating the database in the same flow regime, the **pipe radius ($r$)** was defined as equal to the **maximum value of the distance transform in the rock ($r_{max}$)**. The Reynolds number was determined based on what is observed in typical porous media experiments, which is **$Re \ll 1$**. To stipulate the force, a maximum Reynolds number $\left(Re_{max}\right)$ of **$0.1$** was used.
 
+<p align="center">
+  <img src="Images/rockTUbe.png" width="45%">
+  <img src="Images/max_dt_slice.svg" width="45%">
+</p>
+
 The fluid viscosity ($\mu$) in lattice units is conditioned by the LBM parameter $\tau$, according to Equation (2), and was adopted as the upper limit of $1.5$ in the software used \citep{mcclure2021lbpm}, being constant across all samples. Finally, the density $\rho$ in lattice units is constant and unitary in LBM simulations due to isochoric flow.
 
 $$
